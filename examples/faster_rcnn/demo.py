@@ -29,10 +29,12 @@ def main():
     img = utils.read_image(args.image, color=True)
     bboxes, labels, scores = model.predict([img])
     bbox, label, score = bboxes[0], labels[0], scores[0]
+    label1 = label.tolist()
+    print label1.count(14)
 
-    vis_bbox(
-        img, bbox, label, score, label_names=voc_detection_label_names)
-    plot.show()
+   # vis_bbox(
+   #      img, bbox, label, score, label_names=voc_detection_label_names)
+   # plot.show()
 
 
 if __name__ == '__main__':
